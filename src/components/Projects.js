@@ -1,8 +1,10 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
+import spreehaImg from "../assets/img/spreeha-buet88.png";
 import projImg3 from "../assets/img/project-img3.png";
+import embeddedImg1 from "../assets/img/embedded-img1.png";
+import embeddedImg2 from "../assets/img/embedded-img2.png";
+import cacheSimImg from "../assets/img/cache-simulator.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -10,19 +12,37 @@ import TrackVisibility from "react-on-screen";
 export const Projects = () => {
   const projects = [
     {
-      title: "Non-Profit",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Spreeha BUET-88 Foundation",
+      description: "Non-Profit Website",
+      imgUrl: spreehaImg,
+      url: "https://www.spreeha-buet88.com/",
     },
     {
       title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
+      description: "React Template Design",
       imgUrl: projImg3,
+    },
+  ];
+
+  const embeddedProjects = [
+    {
+      title: "Arithmetic Training Game",
+      description: "Interactive game on uLCD display to improve arithmetic skills",
+      imgUrl: embeddedImg1,
+    },
+    {
+      title: "Portable Proximity Sensor",
+      description: "Compact proximity detection device with real-time feedback",
+      imgUrl: embeddedImg2,
+    },
+  ];
+
+  const compArchProjects = [
+    {
+      title: "Cache Simulator",
+      description: "Multi-level L1/L2 cache simulator with victim cache support",
+      imgUrl: cacheSimImg,
+      url: "https://github.com/Samiurr10/Cache-Simulator",
     },
   ];
 
@@ -80,7 +100,7 @@ export const Projects = () => {
                           tailored to user needs.
                         </p>
 
-                        <Row>
+                        <Row className="justify-content-center">
                           {projects.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
@@ -103,6 +123,11 @@ export const Projects = () => {
                           handheld gaming systems on Mbed, Arduino and
                          Rasberry Pi platforms.
                         </p>
+                        <Row className="justify-content-center">
+                          {embeddedProjects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <p>
@@ -112,6 +137,11 @@ export const Projects = () => {
                           GPU-accelerated algorithms for high-performance
                           computing tasks.
                         </p>
+                        <Row className="justify-content-center">
+                          {compArchProjects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
