@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Samiur Rahman - Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website showcasing my projects, skills, and experiences across web development, embedded systems, and computer architecture.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Visit the live site: [samiurrahman.com](https://personal-portfolio-otfvxqghf-samiur-rahmans-projects.vercel.app)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Interactive UI** - Smooth animations and modern design with React Bootstrap
+- **Project Showcase** - Organized by category (Web/App Development, Embedded Systems, Computer Architecture)
+- **AI Chat Assistant** - Powered by LangChain and OpenAI to answer questions about my background
+- **Responsive Design** - Optimized for all device sizes
+- **Contact Form** - Easy way to get in touch
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Projects Highlighted
 
-### `npm test`
+### Web/App Development
+- **Spreeha BUET-88 Foundation** - Non-profit website for alumni organization
+- **Business Startup Template** - React template design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Embedded Systems
+- **Arithmetic Training Game** - Interactive game on uLCD display to improve arithmetic skills
+- **Portable Proximity Sensor** - Compact proximity detection device with real-time feedback
 
-### `npm run build`
+### Computer Architecture
+- **Cache Simulator** - Multi-level L1/L2 cache simulator with victim cache support
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Frontend | Backend | Tools |
+|----------|---------|-------|
+| React.js | FastAPI | Git |
+| Bootstrap | LangChain | Vercel |
+| CSS3 | Pinecone | npm |
+| Animate.css | OpenAI API | |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v14+)
+- Python 3.8+ (for backend)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone https://github.com/Samiurr10/Personal-Portfolio.git
+cd Personal-Portfolio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install frontend dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Start the development server
+npm start
+```
 
-## Learn More
+### Backend Setup (Optional - for AI Chat)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-### Code Splitting
+# Install dependencies
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Create .env file with your API keys
+echo "OPENAI_API_KEY=your-openai-key" > .env
+echo "PINECONE_API_KEY=your-pinecone-key" >> .env
 
-### Analyzing the Bundle Size
+# Run the backend
+uvicorn main:app --reload
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+```
+Personal-Portfolio/
+├── public/              # Static assets
+├── src/
+│   ├── assets/          # Images and fonts
+│   ├── components/      # React components
+│   │   ├── Banner.js    # Hero section
+│   │   ├── Chat.js      # AI chat assistant
+│   │   ├── NavBar.js    # Navigation
+│   │   ├── Projects.js  # Project showcase
+│   │   ├── Skills.js    # Skills section
+│   │   └── Footer.js    # Footer
+│   ├── App.js           # Main app component
+│   └── index.js         # Entry point
+├── backend/
+│   └── main.py          # FastAPI backend
+└── package.json
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+- **GitHub**: [@Samiurr10](https://github.com/Samiurr10)
+- **LinkedIn**: [Samiur Rahman](https://linkedin.com/in/samiurrahman)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the [MIT License](LICENSE).
