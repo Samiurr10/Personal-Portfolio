@@ -311,6 +311,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill {
   padding: 0 0 50px 0;
   position: relative;
+  overflow: hidden;
 }
 .skill-bx {
   background: #151515;
@@ -351,7 +352,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .experience {
   padding: 80px 0 60px 0;
   position: relative;
-  background: #121212;
+  overflow: hidden;
 }
 .experience h2 {
   font-size: 45px;
@@ -549,7 +550,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  overflow: hidden;
 }
 .project h2 {
 	font-size: 45px;
@@ -776,7 +777,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .chat {
   padding: 80px 0;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+  position: relative;
   color: #fff;
   text-align: center;
 }

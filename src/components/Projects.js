@@ -6,6 +6,7 @@ import embeddedImg1 from "../assets/img/embedded-img1.png";
 import embeddedImg2 from "../assets/img/embedded-img2.png";
 import cacheSimulatorImg from "../assets/img/cache-simulator-architecture.png";
 import gpuProjectImg from "../assets/img/gpu-image-filter-engine.png";
+import colorSharp from "../assets/img/color-sharp.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -150,7 +151,8 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-left" src={colorSharp} alt="" aria-hidden="true" />
+      <img className="background-image-right" src={colorSharp2} alt="" aria-hidden="true" />
     </section>
   );
 };

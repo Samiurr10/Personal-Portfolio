@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import TrackVisibility from "react-on-screen";
-import "animate.css";
 import colorSharp from "../assets/img/color-sharp.png";
+import colorSharp2 from "../assets/img/color-sharp2.png";
 import logoTesla from "../assets/img/logo-tesla.png";
 import logoCitadel from "../assets/img/logo-citadel.png";
 import logoFigure from "../assets/img/logo-figure.png";
@@ -11,7 +10,7 @@ const experiences = [
   {
     company: "Figure",
     logo: logoFigure,
-    logoBg: "#000000",
+    logoBg: "transparent",
     role: "Embedded Automation Intern",
     date: "May 2025 – Aug 2025",
     location: "San Jose, CA",
@@ -76,13 +75,7 @@ export const Experience = () => {
       <Container>
         <Row>
           <Col xs={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
+            <div>
                   <h2>Experience</h2>
                   <p>
                     Internship experience spanning firmware validation, embedded
@@ -90,64 +83,57 @@ export const Experience = () => {
                     companies across the industry.
                   </p>
                   <div className="exp-timeline">
-                    {experiences.map((exp, idx) => (
-                      <TrackVisibility key={exp.company}>
-                        {({ isVisible: cardVisible }) => (
+                    {experiences.map((exp) => (
+                      <div className="exp-card" key={exp.company}>
+                        <div className="exp-card-header">
                           <div
-                            className={`exp-card${
-                              cardVisible
-                                ? " animate__animated animate__slideInUp"
-                                : ""
-                            }`}
-                            style={{ animationDelay: `${idx * 0.1}s` }}
+                            className="exp-logo-wrap"
+                            style={{ background: exp.logoBg }}
                           >
-                            <div className="exp-card-header">
-                              <div
-                                className="exp-logo-wrap"
-                                style={{ background: exp.logoBg }}
-                              >
-                                <img
-                                  src={exp.logo}
-                                  alt={`${exp.company} logo`}
-                                />
-                              </div>
-                              <div className="exp-header-text">
-                                <h3>{exp.company}</h3>
-                                <div className="exp-meta">
-                                  <span className="exp-role">{exp.role}</span>
-                                  <span className="exp-date">{exp.date}</span>
-                                </div>
-                                <span className="exp-location">
-                                  {exp.location}
-                                </span>
-                              </div>
-                            </div>
-                            <ul className="exp-bullets">
-                              {exp.bullets.map((b) => (
-                                <li key={b}>{b}</li>
-                              ))}
-                            </ul>
-                            <div className="exp-tags">
-                              {exp.tags.map((t) => (
-                                <span className="exp-tag" key={t}>
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
+                            <img
+                              src={exp.logo}
+                              alt={`${exp.company} logo`}
+                            />
                           </div>
-                        )}
-                      </TrackVisibility>
+                          <div className="exp-header-text">
+                            <h3>{exp.company}</h3>
+                            <div className="exp-meta">
+                              <span className="exp-role">{exp.role}</span>
+                              <span className="exp-date">{exp.date}</span>
+                            </div>
+                            <span className="exp-location">
+                              {exp.location}
+                            </span>
+                          </div>
+                        </div>
+                        <ul className="exp-bullets">
+                          {exp.bullets.map((b) => (
+                            <li key={b}>{b}</li>
+                          ))}
+                        </ul>
+                        <div className="exp-tags">
+                          {exp.tags.map((t) => (
+                            <span className="exp-tag" key={t}>
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                   </div>
-                </div>
-              )}
-            </TrackVisibility>
+            </div>
           </Col>
         </Row>
       </Container>
       <img
         className="background-image-left"
         src={colorSharp}
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        className="background-image-right"
+        src={colorSharp2}
         alt=""
         aria-hidden="true"
       />
