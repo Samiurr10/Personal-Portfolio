@@ -1,7 +1,7 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import spreehaImg from "../assets/img/spreeha-buet88.png";
-import projImg3 from "../assets/img/project-img3.png";
+import appleGadgetsImg from "../assets/img/apple-gadgets-bd.png";
 import embeddedImg1 from "../assets/img/embedded-img1.png";
 import embeddedImg2 from "../assets/img/embedded-img2.png";
 import cacheSimImg from "../assets/img/cache-simulator.png";
@@ -18,9 +18,10 @@ export const Projects = () => {
       url: "https://www.spreeha-buet88.com/",
     },
     {
-      title: "Business Startup",
-      description: "React Template Design",
-      imgUrl: projImg3,
+      title: "Tech Website",
+      description: "Apple Gadgets BD — e-commerce",
+      imgUrl: appleGadgetsImg,
+      url: "https://www.applegadgetsbd.com/",
     },
   ];
 
