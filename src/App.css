@@ -347,6 +347,204 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
+/************ Experience Css ************/
+.experience {
+  padding: 80px 0 60px 0;
+  position: relative;
+  background: #121212;
+}
+.experience h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+}
+.experience > .container > .row > div > div > p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 50px auto;
+  text-align: center;
+  width: 65%;
+}
+.exp-timeline {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.exp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #AA367C 0%, #4A2FBD 100%);
+  opacity: 0.35;
+  z-index: 0;
+}
+.exp-card {
+  position: relative;
+  background: #151515;
+  border-radius: 20px;
+  padding: 28px 32px 24px 32px;
+  border-left: 3px solid transparent;
+  background-clip: padding-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 1;
+}
+.exp-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px 0 1px 3px;
+  background: linear-gradient(135deg, #AA367C, #4A2FBD);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(170, 54, 124, 0.18);
+}
+.exp-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.exp-logo-wrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+}
+.exp-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.exp-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.exp-header-text h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.exp-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.exp-role {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.exp-date {
+  color: #B8B8B8;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 2px 12px;
+}
+.exp-location {
+  color: #B8B8B8;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+}
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.exp-bullets li {
+  color: #B8B8B8;
+  font-size: 15px;
+  line-height: 1.65em;
+  letter-spacing: 0.3px;
+  padding: 5px 0 5px 18px;
+  position: relative;
+}
+.exp-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #AA367C, #4A2FBD);
+}
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.exp-tag {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  color: #B8B8B8;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 4px 14px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.exp-tag:hover {
+  background: rgba(170, 54, 124, 0.2);
+  border-color: rgba(170, 54, 124, 0.5);
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .experience > .container > .row > div > div > p {
+    width: 90%;
+  }
+  .exp-timeline::before {
+    display: none;
+  }
+  .exp-card-header {
+    flex-direction: row;
+    align-items: center;
+  }
+  .exp-logo-wrap {
+    width: 50px;
+    height: 50px;
+  }
+  .exp-header-text h3 {
+    font-size: 20px;
+  }
+  .exp-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
