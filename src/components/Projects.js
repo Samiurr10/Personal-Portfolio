@@ -4,7 +4,8 @@ import spreehaImg from "../assets/img/spreeha-buet88.png";
 import appleGadgetsImg from "../assets/img/apple-gadgets-bd.png";
 import embeddedImg1 from "../assets/img/embedded-img1.png";
 import embeddedImg2 from "../assets/img/embedded-img2.png";
-import cacheSimImg from "../assets/img/cache-simulator.png";
+import cacheSimulatorImg from "../assets/img/cache-simulator-architecture.png";
+import gpuProjectImg from "../assets/img/project-img2.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -42,13 +43,13 @@ export const Projects = () => {
     {
       title: "Cache Simulator",
       description: "Multi-level L1/L2 cache simulator with victim cache support",
-      imgUrl: cacheSimImg,
+      imgUrl: cacheSimulatorImg,
       url: "https://github.com/Samiurr10/Cache-Simulator",
     },
     {
       title: "GPU Image Filter Engine",
       description: "CUDA convolution pipeline across 10,000+ GPU threads",
-      imgUrl: cacheSimImg,
+      imgUrl: gpuProjectImg,
       url: "https://github.com/Samiurr10/ECE-4122-final-project",
     },
   ];
