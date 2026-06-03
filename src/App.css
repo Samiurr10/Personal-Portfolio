@@ -521,31 +521,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: rgba(170, 54, 124, 0.5);
   color: #fff;
 }
-@media (max-width: 768px) {
-  .experience > .container > .row > div > div > p {
-    width: 90%;
-  }
-  .exp-timeline::before {
-    display: none;
-  }
-  .exp-card-header {
-    flex-direction: row;
-    align-items: center;
-  }
-  .exp-logo-wrap {
-    width: 50px;
-    height: 50px;
-  }
-  .exp-header-text h3 {
-    font-size: 20px;
-  }
-  .exp-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-}
-
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
@@ -840,4 +815,158 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   margin-top: 20px;
   color: #fff;
+}
+
+/************ Mobile Responsive ************/
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav.navbar a.navbar-brand {
+    width: 28%;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  .navbar-text {
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .navbar-text button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-left: 0;
+  }
+  .social-icon {
+    margin-left: 0;
+  }
+
+  /* Banner */
+  .banner {
+    padding: 120px 0 60px 0;
+    text-align: center;
+  }
+  .banner h1 {
+    font-size: 36px;
+    letter-spacing: 0.4px;
+  }
+  .banner p {
+    font-size: 16px;
+    width: 100%;
+  }
+  .banner button {
+    margin: 30px auto 0 auto;
+    font-size: 17px;
+  }
+  .banner img {
+    width: 70%;
+    margin: 40px auto 0 auto;
+    display: block;
+  }
+
+  /* Skills */
+  .skill-bx {
+    padding: 40px 20px;
+    border-radius: 32px;
+  }
+  .skill h2 {
+    font-size: 32px;
+  }
+  .skill p {
+    font-size: 16px;
+    margin: 14px 0 40px 0;
+  }
+  .skill-slider {
+    width: 100%;
+  }
+
+  /* Experience */
+  .experience h2 {
+    font-size: 32px;
+  }
+  .experience > .container > .row > div > div > p {
+    width: 95%;
+    font-size: 16px;
+  }
+  .exp-timeline {
+    max-width: 100%;
+  }
+  .exp-card {
+    padding: 20px 18px 18px 18px;
+  }
+  .exp-card-header {
+    gap: 14px;
+  }
+  .exp-header-text h3 {
+    font-size: 20px;
+  }
+  .exp-role {
+    font-size: 14px;
+  }
+  .exp-bullets li {
+    font-size: 14px;
+  }
+
+  /* Projects */
+  .project h2 {
+    font-size: 32px;
+  }
+  .project p {
+    width: 92%;
+    font-size: 16px;
+  }
+  .project .nav.nav-pills {
+    width: 100%;
+    border-radius: 12px;
+    flex-direction: column;
+  }
+  .project .nav.nav-pills .nav-item {
+    width: 100%;
+  }
+  .nav-link#projects-tabs-tab-first {
+    border-radius: 12px 12px 0 0;
+  }
+  .nav-link#projects-tabs-tab-third {
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* Chat */
+  .chat h2 {
+    font-size: 32px;
+  }
+  .chat p {
+    font-size: 16px;
+    padding: 0 16px;
+  }
+  .chat form {
+    max-width: 92%;
+    padding: 0 16px;
+  }
+
+  /* Footer */
+  .footer img {
+    width: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner h1 {
+    font-size: 28px;
+  }
+  .banner {
+    padding: 100px 0 40px 0;
+  }
+  .skill-bx {
+    padding: 32px 14px;
+    border-radius: 24px;
+  }
+  .exp-card {
+    padding: 16px 14px 14px 14px;
+  }
+  .exp-logo-wrap {
+    width: 44px;
+    height: 44px;
+  }
 }
