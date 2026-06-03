@@ -44,6 +44,12 @@ export const Projects = () => {
       imgUrl: cacheSimImg,
       url: "https://github.com/Samiurr10/Cache-Simulator",
     },
+    {
+      title: "GPU Image Filter Engine",
+      description: "CUDA convolution pipeline across 10,000+ GPU threads",
+      imgUrl: cacheSimImg,
+      url: "https://github.com/Samiurr10/ECE-4122-final-project",
+    },
   ];
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../site";
 
 export const Chat = () => {
   const [question, setQuestion] = useState("");
@@ -10,10 +11,17 @@ export const Chat = () => {
       return;
     }
 
+    if (!API_URL) {
+      setResponse(
+        "AI chat is offline. Email me at srahman96@gatech.edu or view my resume from the nav bar."
+      );
+      return;
+    }
+
     setResponse("Thinking...");
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/search", {
+      const res = await fetch(`${API_URL}/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,12 +35,14 @@ export const Chat = () => {
         setResponse("Error: " + data.response);
       }
     } catch (error) {
-      setResponse("An error occurred. Please try again.");
+      setResponse(
+        "Could not reach the assistant. Try again later or email srahman96@gatech.edu."
+      );
     }
   };
 
   return (
-    <div className="chat">
+    <div className="chat" id="chat">
       <h2>Ask Me Anything</h2>
       <input
         type="text"

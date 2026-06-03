@@ -6,6 +6,7 @@ import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.png";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
+import { CONTACT_EMAIL, RESUME_PATH } from "../site";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -97,20 +98,10 @@ export const NavBar = () => {
                   <img src={navIcon2} alt="GitHub Icon" />
                 </a>
                 <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const pdfUrl = "/Samiur_Rahman_Resume.pdf";
-
-                    // Open the resume in a new tab
-                    window.open(pdfUrl, "_blank");
-
-                    // Trigger the download
-                    const link = document.createElement("a");
-                    link.href = pdfUrl;
-                    link.download = "Samiur_Rahman_Resume.pdf";
-                    link.click();
-                  }}
+                  href={RESUME_PATH}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Samiur_Rahman_Resume.pdf"
                 >
                   <img src={navIcon3} alt="Resume Icon" />
                 </a>
@@ -119,7 +110,7 @@ export const NavBar = () => {
                 <button
                   className="vvd"
                   onClick={() => {
-                    window.location.href = "mailto:heyitzsamiur@gmail.com";
+                    window.location.href = `mailto:${CONTACT_EMAIL}`;
                   }}
                 >
                   <span>Let’s Connect</span>

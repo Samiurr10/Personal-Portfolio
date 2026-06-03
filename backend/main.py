@@ -17,9 +17,11 @@ app = FastAPI()
 
 # CORS Setup
 origins = [
-    "http://127.0.0.1:8000",
-    "http://127.0.0.1:5173",
-    "https://personal-portfolio-otfvxqghf-samiur-rahmans-projects.vercel.app"
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    "https://samiur.dev",
+    "https://www.samiur.dev",
+    "https://personal-portfolio-otfvxqghf-samiur-rahmans-projects.vercel.app",
 ]
 app.add_middleware(
     CORSMiddleware,

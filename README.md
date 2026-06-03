@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my projects, skills, and exper
 
 ## Live Demo
 
-Visit the live site: [samiurrahman.com](https://personal-portfolio-otfvxqghf-samiur-rahmans-projects.vercel.app)
+Visit the live site: **[samiur.dev](https://samiur.dev)**
 
 ## Features
 
@@ -100,7 +100,8 @@ Personal-Portfolio/
 ## Contact
 
 - **GitHub**: [@Samiurr10](https://github.com/Samiurr10)
-- **LinkedIn**: [Samiur Rahman](https://linkedin.com/in/samiurrahman)
+- **LinkedIn**: [Samiur Rahman](https://www.linkedin.com/in/samiur-rahman-1a09b6271/)
+- **Website**: [samiur.dev](https://samiur.dev)
 
 ## License
 

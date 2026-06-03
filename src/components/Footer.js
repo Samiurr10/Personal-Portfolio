@@ -3,6 +3,7 @@ import logo from "../assets/img/logo.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.png";
+import { RESUME_PATH } from "../site";
 
 export const Footer = () => {
   return (
@@ -26,25 +27,15 @@ export const Footer = () => {
               <img src={navIcon2} alt="GitHub Icon" />
             </a>
             <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                const pdfUrl = "/Samiur_Rahman_Resume.pdf";
-
-                // Open the resume in a new tab
-                window.open(pdfUrl, "_blank");
-
-                // Trigger the download
-                const link = document.createElement("a");
-                link.href = pdfUrl;
-                link.download = "Samiur_Rahman_Resume.pdf";
-                link.click();
-              }}
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Samiur_Rahman_Resume.pdf"
             >
               <img src={navIcon3} alt="Resume Icon" />
             </a>
           </div>
-          <p>Copyright 2025. All Rights Reserved</p>
+          <p>Copyright 2026. All Rights Reserved</p>
         </div>
       </Container>
     </footer>

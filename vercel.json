@@ -1,0 +1,25 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.samiur.dev" }],
+      "destination": "https://samiur.dev/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/Samiur_Rahman_Resume.pdf",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Samiur_Rahman_Resume.pdf\""
+        }
+      ]
+    }
+  ]
+}
