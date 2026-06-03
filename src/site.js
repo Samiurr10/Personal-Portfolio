@@ -1,5 +1,5 @@
 export const SITE_URL =
-  process.env.REACT_APP_SITE_URL || "https://samiur.dev";
+  process.env.REACT_APP_SITE_URL || "https://www.samiur.dev";
 
 export const RESUME_PATH = "/Samiur_Rahman_Resume.pdf";
 export const RESUME_FILENAME = "Samiur_Rahman_Resume.pdf";

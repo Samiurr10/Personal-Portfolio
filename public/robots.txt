@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samiur.dev/sitemap.xml
+Sitemap: https://www.samiur.dev/sitemap.xml
