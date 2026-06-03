@@ -18,8 +18,8 @@ export const Projects = () => {
       url: "https://www.spreeha-buet88.com/",
     },
     {
-      title: "Tech Website",
-      description: "Apple Gadgets BD — e-commerce",
+      title: "Apple Gadgets BD",
+      description: "E-commerce Website",
       imgUrl: appleGadgetsImg,
       url: "https://www.applegadgetsbd.com/",
     },

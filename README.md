@@ -20,7 +20,7 @@ Visit the live site: **[samiur.dev](https://www.samiur.dev)**
 
 ### Web/App Development
 - **Spreeha BUET-88 Foundation** - Non-profit website for alumni organization
-- **Tech Website** - [Apple Gadgets BD](https://www.applegadgetsbd.com/) e-commerce
+- **Apple Gadgets BD** - [E-commerce website](https://www.applegadgetsbd.com/)
 
 ### Embedded Systems
 - **Arithmetic Training Game** - Interactive game on uLCD display to improve arithmetic skills
