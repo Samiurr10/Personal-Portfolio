@@ -6,7 +6,33 @@
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!api/)(?!.*\\.).*)", "destination": "/index.html" }
   ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "samiur.dev" }],
+      "destination": "https://www.samiur.dev/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/Samiur_Rahman_Resume.pdf",
       "headers": [
