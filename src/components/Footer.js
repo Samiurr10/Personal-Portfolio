@@ -3,7 +3,7 @@ import logo from "../assets/img/logo.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.png";
-import { RESUME_PATH } from "../site";
+import { openResume } from "../site";
 
 export const Footer = () => {
   return (
@@ -27,10 +27,11 @@ export const Footer = () => {
               <img src={navIcon2} alt="GitHub Icon" />
             </a>
             <a
-              href={RESUME_PATH}
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Samiur_Rahman_Resume.pdf"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                openResume();
+              }}
             >
               <img src={navIcon3} alt="Resume Icon" />
             </a>
