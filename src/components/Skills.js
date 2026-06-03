@@ -3,14 +3,25 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+
+const skills = [
+  { title: "Full-Stack Web Development", icon: meter1, alt: "Full-stack web development" },
+  { title: "Embedded System Design", icon: meter3, alt: "Embedded system design" },
+  { title: "High Performance Computing", icon: meter2, alt: "High performance computing" },
+  { title: "Digital Design & Hardware Architecture", icon: meter3, alt: "Digital design and hardware architecture" },
+  { title: "Machine Learning/AI Fundamentals", icon: meter2, alt: "Machine learning and AI" },
+  { title: "IoT and Real-Time Systems", icon: meter1, alt: "IoT and real-time systems" },
+  { title: "AI & Agent Engineering", icon: meter2, alt: "AI and agent engineering" },
+  { title: "Embedded Systems & Firmware", icon: meter3, alt: "Embedded systems and firmware" },
+  { title: "Test & Automation Engineering", icon: meter1, alt: "Test and automation engineering" },
+  { title: "Systems & GPU Programming", icon: meter2, alt: "Systems and GPU programming" },
+  { title: "System Design & Architecture", icon: meter3, alt: "System design and architecture" },
+];
 
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -36,47 +47,39 @@ export const Skills = () => {
             <div className="skill-bx wow zoomIn">
               <h2>Skills</h2>
               <p>
-                My expertise
-                includes building scalable web platforms with modern frameworks,
-                designing IoT-integrated solutions, and optimizing algorithms
-                for GPU. <br></br> I thrive on solving challenging technical
-                problems with innovative, efficient solutions.
+                My expertise includes building scalable web platforms, designing
+                IoT-integrated solutions, and optimizing algorithms for GPU and
+                high-performance systems.
+                <br />
+                <br />
+                Through roles at Figure, Tesla, Tektronix, and Citadel — plus
+                coursework in computer architecture — I’ve also applied AI/MCP
+                tooling, firmware and HIL/SIL automation, and end-to-end system
+                design. I thrive on innovative, efficient solutions to hard
+                engineering problems.
               </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
                 className="owl-carousel owl-theme skill-slider"
               >
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Full-Stack Web Development</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} alt="Image" />
-                  <h5>Embedded System Design</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>High Performance Computing</h5>
-                </div>
-                <div className="item">
-                  <img src={meter3} alt="Image" />
-                  <h5>Digital Design and Hardware Architecture </h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Machine Learning/AI Fundamentals</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>IoT and Real-Time Systems</h5>
-                </div>
+                {skills.map((skill) => (
+                  <div className="item" key={skill.title}>
+                    <img src={skill.icon} alt={skill.alt} />
+                    <h5>{skill.title}</h5>
+                  </div>
+                ))}
               </Carousel>
             </div>
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt=""
+        aria-hidden="true"
+      />
     </section>
   );
 };

@@ -13,9 +13,14 @@ export const Banner = () => {
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
   const toRotate = [
+    "Firmware Engineer",
     "Full Stack Developer",
-    "Embedded System Engineer",
-    "Computer Architect ",
+    "AI Engineer",
+    "Embedded Systems Engineer",
+    "Automation Engineer",
+    "System Design Specialist",
+    "Computer Architect",
+    "High-Performance Computing Engineer",
   ];
   const period = 2000;
 
@@ -74,22 +79,20 @@ export const Banner = () => {
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
-                      data-rotate='[ "Full Stack Developer", "Embedded System Engineer", "High-Performance Computing Engineer " ]'
+                      data-rotate='[ "Firmware Engineer", "Full Stack Developer", "AI Engineer", "Embedded Systems Engineer", "Automation Engineer", "System Design Specialist", "Computer Architect", "High-Performance Computing Engineer" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Hi! I’m Samiur Rahman, a passionate Full-Stack Developer,
-                    Computer Architect, and Embedded Systems Engineer with a
-                    strong foundation in software and hardware systems. My
-                    expertise bridges the gap between designing cutting-edge
-                    software applications and developing optimized embedded
-                    systems and hardware architectures. Whether it's building
-                    scalable web platforms, designing IoT-integrated
-                    applications, or developing algorithms for high-performance
-                    computing, I thrive on solving challenging technical and
-                    practical problems.
+                    I’m Samiur Rahman, a passionate Computer Engineering
+                    student at Georgia Tech with internship experience at
+                    Figure, Tesla, Tektronix, and Citadel. I work across
+                    firmware validation, full-stack and mobile apps, AI agents
+                    and MCP tooling, test automation, and systems design — from
+                    SIL/HIL and OTA infrastructure to React, Flutter, CUDA, and
+                    computer architecture. I thrive on solving hard technical
+                    problems where software, hardware, and performance meet.
                   </p>
                   <button
                     onClick={() => {
