@@ -4,7 +4,9 @@ A modern, responsive portfolio website showcasing my projects, skills, and exper
 
 ## Live Demo
 
-Visit the live site: **[samiur.dev](https://samiur.dev)**
+Visit the live site: **[samiur.dev](https://www.samiur.dev)**
+
+> **Vercel stuck on an old deploy?** See [VERCEL_SETUP.md](./VERCEL_SETUP.md) to reconnect GitHub and deploy latest `main`.
 
 ## Features
 
