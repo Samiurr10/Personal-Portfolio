@@ -1,57 +1,65 @@
 import React, { useState } from "react";
-import { API_URL } from "../site";
+import { API_SEARCH_URL, CONTACT_EMAIL } from "../site";
 
 export const Chat = () => {
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleAsk = async () => {
-    if (!question.trim()) {
+  const handleAsk = async (e) => {
+    e?.preventDefault();
+
+    const trimmed = question.trim();
+    if (!trimmed) {
       setResponse("Please enter a question.");
       return;
     }
 
-    if (!API_URL) {
-      setResponse(
-        "AI chat is offline. Email me at srahman96@gatech.edu or view my resume from the nav bar."
-      );
-      return;
-    }
-
+    setLoading(true);
     setResponse("Thinking...");
 
     try {
-      const res = await fetch(`${API_URL}/search`, {
+      const res = await fetch(API_SEARCH_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query: question }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: trimmed }),
       });
+
       const data = await res.json();
-      if (data.status === 200) {
+
+      if (data.status === 200 && data.response) {
         setResponse(data.response);
       } else {
-        setResponse("Error: " + data.response);
+        setResponse(data.response || "Something went wrong. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setResponse(
-        "Could not reach the assistant. Try again later or email srahman96@gatech.edu."
+        `Could not reach the assistant. Email me at ${CONTACT_EMAIL} or use the resume link above.`
       );
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="chat" id="chat">
+    <section className="chat" id="chat">
       <h2>Ask Me Anything</h2>
-      <input
-        type="text"
-        placeholder="Type your question here..."
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-      />
-      <button onClick={handleAsk}>Ask</button>
-      <p>{response}</p>
-    </div>
+      <p>Have a question about my experience, projects, or skills? Ask below.</p>
+      <form onSubmit={handleAsk}>
+        <input
+          className="chat-input"
+          type="text"
+          placeholder="Type your question here..."
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          disabled={loading}
+          aria-label="Your question"
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? "Thinking..." : "Ask"}
+        </button>
+      </form>
+      {response ? <p className="chat-response">{response}</p> : null}
+    </section>
   );
 };

@@ -18,4 +18,6 @@ export function openResume() {
 export const CONTACT_EMAIL =
   process.env.REACT_APP_CONTACT_EMAIL || "srahman96@gatech.edu";
 
-export const API_URL = process.env.REACT_APP_API_URL || "";
+/** POST endpoint for the Ask Me Anything feature (Vercel serverless or local proxy). */
+export const API_SEARCH_URL =
+  process.env.REACT_APP_API_SEARCH_URL || "/api/search";

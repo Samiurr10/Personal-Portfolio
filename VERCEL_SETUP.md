@@ -37,7 +37,13 @@ Or: open the latest `main` deployment → **⋯** → **Redeploy** → uncheck �
 | `REACT_APP_SITE_URL` | `https://samiur.dev` |
 | `REACT_APP_CONTACT_EMAIL` | `srahman96@gatech.edu` |
 
-Leave `REACT_APP_API_URL` empty unless the FastAPI backend is deployed.
+**Ask Me Anything (optional, smarter answers):**
+
+| Name | Value |
+|------|--------|
+| `OPENAI_API_KEY` | Your OpenAI API key |
+
+Without `OPENAI_API_KEY`, the chat still works using built-in answers about your background.
 
 **Save** → redeploy once more.
 
