@@ -595,23 +595,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 30px;
 }
 
+.chat form {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
 .chat-input {
   width: 100%;
-  padding: 15px;
+  padding: 12px 20px;
   border: none;
   border-radius: 25px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  text-align: center;
 }
 
 .chat-input::placeholder {
   color: rgba(255, 255, 255, 0.7);
+  text-align: center;
 }
 
 .chat-input:focus {
   background: rgba(255, 255, 255, 1);
   color: #121212;
+  text-align: center;
 }
 
 .chat form button {
