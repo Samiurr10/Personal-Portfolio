@@ -5,7 +5,7 @@ import appleGadgetsImg from "../assets/img/apple-gadgets-bd.png";
 import embeddedImg1 from "../assets/img/embedded-img1.png";
 import embeddedImg2 from "../assets/img/embedded-img2.png";
 import cacheSimulatorImg from "../assets/img/cache-simulator-architecture.png";
-import gpuProjectImg from "../assets/img/project-img2.png";
+import gpuProjectImg from "../assets/img/gpu-image-filter-engine.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
