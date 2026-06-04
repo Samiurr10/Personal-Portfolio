@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { API_SEARCH_URL, CONTACT_EMAIL } from "../site";
+import colorSharp from "../assets/img/color-sharp.png";
 
 export const Chat = () => {
   const [question, setQuestion] = useState("");
@@ -43,6 +44,7 @@ export const Chat = () => {
 
   return (
     <section className="chat" id="chat">
+      <img className="background-image-left" src={colorSharp} alt="" aria-hidden="true" />
       <h2>Ask Me Anything</h2>
       <p>Have a question about my experience, projects, or skills? Ask below.</p>
       <form onSubmit={handleAsk}>

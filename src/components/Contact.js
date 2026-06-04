@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import colorSharp from "../assets/img/color-sharp.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 
 export const Contact = () => {
@@ -90,12 +91,8 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
-      <img
-        className="background-image-right"
-        src={colorSharp2}
-        alt=""
-        aria-hidden="true"
-      />
+      <img className="background-image-left" src={colorSharp} alt="" aria-hidden="true" />
+      <img className="background-image-right" src={colorSharp2} alt="" aria-hidden="true" />
     </section>
   );
 };
