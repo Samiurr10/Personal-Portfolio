@@ -20,50 +20,45 @@ detail so that retrieval-augmented answers are accurate and specific.
 
 ## Internship Experience
 
-### Figure AI — Embedded Automation Intern
+### Figure — Embedded Automation Intern
 **Dates:** Jan 2026 – May 2026
 **Location:** San Jose, CA
-**Primary Languages/Tech:** C++ (OTA firmware), Python (chatbots, AI agent, automation), Rust (CLI tooling)
+**Primary Languages/Tech:** Python, C++, Rust, HIL/OTA, Slack API, Jira, Embedded Systems, Test Automation
 
 - Scaled connectivity test infrastructure from basic speed tests to full interface validation (priority arbitration, service allowlisting, Wi-Fi stability, AP testing, mid-OTA network switching), increasing automated coverage by 40%.
-- Debugged and fixed 25+ OTA bugs in **C++**, authored regression tests for each, and grew the OTA automated test suite from 0 to full scenario coverage, reducing OTA-related failures by 99%.
-- Built a Slack-Jira integration bot in **Python** that auto-creates Jira tickets from Slack threads, attaches logs, and triggers an agent to open a fix PR.
-- Deployed a nightly HIL summary bot in **Python** that surfaces root causes, links relevant merged PRs, and tags owners.
-- Improved the test results website by adding an interactive AI agent and optimized DB read/write latency by 40% using **Python**.
-- Created a CLI tool in **Rust** to support internal firmware team workflows.
-- **Three languages used:** C++ for OTA firmware, Python for chatbot/AI agent/automation tooling, and Rust for CLI development.
+- Debugged and fixed 25+ OTA bugs, authored regression tests for each, and grew the OTA automated test suite from 0 to full scenario coverage, reducing OTA-related failures by 99%.
+- Built a Slack-Jira bot that auto-creates tickets from threads, attaches logs, and triggers an agent to open a fix PR.
+- Deployed a nightly HIL summary bot that surfaces root causes, links relevant merged PRs, and tags owners.
+- Improved test results website by adding an interactive AI agent and optimized DB read/write latency by 40%.
 
 ### Tesla — Software Engineering Intern
 **Dates:** Aug 2025 – Dec 2025
 **Location:** Palo Alto, CA
-**Primary Languages/Tech:** Python (SIL tests), C/C++ (HIL firmware infrastructure), CAN bus, hall-sensor validation
+**Primary Languages/Tech:** C++, Python, CAN Bus, SIL/HIL, Firmware Validation, Automotive
 
-- Migrated 1000+ SIL (Software-in-the-Loop) tests for next-gen Tesla Model Y firmware in **Python**, uncovering and resolving 10+ critical bugs.
-- Ensured ±2% motor RPM accuracy and safety cut-off behavior by validating hall-sensor feedback through **Python**-based SIL tests.
-- Expanded firmware validation coverage across 500+ automated HIL tests by bringing up CAN Motor Monitor signal integration in **C++** for real-time motor performance monitoring.
-- Strengthened thermal safety validation by authoring SIL tests in **Python** for cabin temperature control across vehicle states (running, parked, powered-off), verifying correct Dog Mode and Child Mode behavior.
-- **Python was the primary language** for all SIL tests; CAN Motor Monitor HIL infrastructure work involved C/C++.
+- Migrated 1000+ SIL tests for next-gen Tesla Model Y firmware, uncovering and resolving 10+ critical bugs.
+- Ensured ±2% motor RPM accuracy and safety cut-off behavior by validating hall-sensor feedback.
+- Expanded firmware validation coverage across 500+ automated HIL tests by bringing up CAN Motor Monitor signal integration for real-time motor performance monitoring.
+- Strengthened thermal safety validation by authoring SIL tests for cabin temperature control across vehicle states (running, parked, powered-off), verifying correct Dog Mode and Child Mode behavior.
 
 ### Tektronix — Performance Applications Engineering Intern
 **Dates:** May 2025 – Aug 2025
 **Location:** Beaverton, OR
-**Primary Languages/Tech:** Python, JSON-RPC 2.0, SCPI/VISA, MCP (Model Context Protocol), LangChain, OpenAI API
+**Primary Languages/Tech:** Python, MCP, SCPI/VISA, AI Agents, JSON-RPC, Test Equipment
 
-- Built standalone MCP servers in **Python** with JSON-RPC 2.0 compliance, UDP discovery, and SCPI/VISA integration, enabling multi-instrument control and improving test throughput by 35%.
-- Developed an AI agent in **Python** that translates natural-language test goals into automated instrument measurement workflows, bridging LLM-based reasoning with hardware test equipment.
-- Designed tooling in **Python** to bridge LLM reasoning with hardware test equipment over standard instrument protocols (SCPI, VISA).
-- **Python was the primary language** used throughout this internship for MCP servers, AI agents, and instrument control scripts.
+- Developed an AI-driven agent to translate natural language measurement goals into automated test workflows, integrating SCPI/VISA commands for Tektronix devices, reducing manual setup time by 60%.
+- Built standalone MCP servers with JSON-RPC 2.0 compliance, UDP discovery, and SCPI/VISA integration, enabling seamless multi-instrument control and improving test throughput by 35%.
+- Delivered demos and training on developed AI tools for application engineers, increasing productivity by 50%.
 
 ### Citadel Technologies — Software Development Intern
 **Dates:** May 2024 – Aug 2024
 **Location:** Atlanta, GA
-**Primary Languages/Tech:** Flutter, Dart, WebSockets, Firebase, REST APIs, Provider, IoT (not Python)
+**Primary Languages/Tech:** Flutter, Dart, WebSockets, Firebase, REST APIs, IoT
 
-- Built a Flutter IoT garage control application in **Dart/Flutter** with real-time WebSocket-based device communication.
-- Integrated Firebase Cloud Messaging push notifications and REST APIs for secure remote access and event alerting.
+- Developed a Flutter mobile app for remote garage control using WebSocket APIs, achieving 95% user satisfaction.
 - Implemented multi-garage and home view support using Provider and RESTful APIs, reducing setup time by 40%.
-- Improved app load times and user retention through performance optimizations.
-- **Note:** This internship used Flutter/Dart, NOT Python. It was the only internship not primarily using Python.
+- Integrated IoT sensors and Firebase Cloud Messaging for real-time alerts, increasing response times by 30%.
+- Optimized app performance and network payload, reducing load times by 35% and boosting user retention by 20%.
 
 ---
 

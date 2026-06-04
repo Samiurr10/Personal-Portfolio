@@ -67,20 +67,20 @@ Resume context (retrieved from resume):
 // ─── Keyword router — fallback when OpenAI is unavailable ─────────────────────
 const KNOWLEDGE_BASE = [
   {
-    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation", "cli", "rust cli", "nightly bot", "test results", "db latency"],
-    answer: "At Figure (Jan–May 2026) I worked across three languages: C++ for OTA firmware (fixing 25+ OTA bugs, scaling the test suite from 0 to full scenario coverage — reducing OTA failures by 99%), Python for a Slack-Jira bot, nightly HIL summary bot, and an AI agent on the test results website that also cut DB latency by 40%, and Rust for a CLI tool. Connectivity coverage also increased by 40%.",
+    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation", "nightly bot", "test results", "db latency"],
+    answer: "At Figure (Jan–May 2026) I scaled connectivity test infrastructure from basic speed tests to full interface validation — increasing automated coverage by 40%. I debugged and fixed 25+ OTA bugs and grew the OTA test suite from 0 to full scenario coverage, reducing OTA-related failures by 99%. I also built a Slack-Jira bot, deployed a nightly HIL summary bot, and improved the test results website with an interactive AI agent while cutting DB latency by 40%.",
   },
   {
-    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain", "hil infra", "can motor monitor", "hall sensor"],
-    answer: "At Tesla (Aug–Dec 2025) I migrated 1000+ SIL tests for next-gen Model Y in Python, resolving 10+ critical bugs and covering hall-sensor validation, RPM accuracy, and thermal safety scenarios like Dog Mode and Child Mode. I also brought up CAN Motor Monitor signal integration in C++ for HIL, expanding HIL test coverage to 500+ automated tests.",
+    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain", "firmware validation", "hall sensor", "can motor monitor"],
+    answer: "At Tesla (Aug–Dec 2025) I migrated 1000+ SIL tests for next-gen Tesla Model Y firmware, uncovering and resolving 10+ critical bugs. I ensured ±2% motor RPM accuracy via hall-sensor validation, expanded HIL coverage across 500+ automated tests by bringing up CAN Motor Monitor signal integration, and authored SIL tests for Dog Mode and Child Mode thermal safety scenarios.",
   },
   {
     topics: ["tektronix", "scpi", "visa", "instrument", "oscilloscope", "measurement", "json-rpc", "mcp server"],
-    answer: "At Tektronix I built MCP servers with JSON-RPC and SCPI/VISA integration for programmatic instrument control. I also developed an AI agent that translates natural-language test goals into automated measurement workflows, bridging LLM reasoning with hardware test equipment.",
+    answer: "At Tektronix (May–Aug 2025) I developed an AI-driven agent that translates natural language measurement goals into automated test workflows using SCPI/VISA, reducing manual setup time by 60%. I also built standalone MCP servers with JSON-RPC 2.0 compliance, UDP discovery, and SCPI/VISA integration, improving test throughput by 35%, and delivered demos and training that increased team productivity by 50%.",
   },
   {
     topics: ["citadel", "flutter", "dart", "garage", "websocket", "firebase", "iot app"],
-    answer: "At Citadel Technologies I built a Flutter IoT garage control app with real-time WebSocket communication, Firebase push notifications, and REST APIs for secure remote access.",
+    answer: "At Citadel Technologies (May–Aug 2024) I developed a Flutter mobile app for remote garage control using WebSocket APIs with 95% user satisfaction. I implemented multi-garage support via Provider and REST APIs (reducing setup time by 40%), integrated IoT sensors and Firebase Cloud Messaging for real-time alerts, and optimized performance to cut load times by 35% and boost retention by 20%.",
   },
   {
     topics: ["cache", "l1", "l2", "victim cache", "amat", "hit rate", "miss rate", "cache simulator"],
