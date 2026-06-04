@@ -23,24 +23,26 @@ detail so that retrieval-augmented answers are accurate and specific.
 ### Figure AI — Embedded Automation Intern
 **Dates:** Jan 2026 – May 2026 (listed as May 2025–Aug 2025 on earlier resume version)
 **Location:** San Jose, CA
-**Primary Languages/Tech:** Python, Bash, Slack API, Jira API, pytest, HIL/OTA test frameworks
+**Primary Languages/Tech:** C++ (OTA firmware), Python (chatbots, automation), Rust (CLI tooling)
 
-- Scaled OTA (Over-the-Air update) and HIL (Hardware-in-the-Loop) connectivity test automation from zero to full scenario coverage, reducing OTA-related failures by 99%.
-- Built a Slack-Jira integration bot in **Python** that auto-creates Jira tickets from Slack threads, attaches logs, and triggers an agent to open a fix PR — dramatically reducing manual triage time.
-- Improved HIL reporting pipelines and test infrastructure in **Python** for embedded connectivity validation of robot modules.
-- Developed and maintained test harnesses for hardware-in-the-loop (HIL) validation of robot connectivity systems.
-- **Python was the primary language** used throughout this internship for automation scripts, test harnesses, and the Slack/Jira bot.
+- Contributed to OTA (Over-the-Air update) firmware in **C++**, helping fix OTA bugs and improve the reliability of the firmware update pipeline for Figure's humanoid robots.
+- Built internal chatbots in **Python** — including a Slack-Jira integration bot that auto-creates Jira tickets from Slack threads, attaches logs, and triggers an agent to open a fix PR.
+- Created a CLI tool in **Rust** to support internal workflows and tooling for the firmware team.
+- Scaled OTA and HIL connectivity test automation, reducing OTA-related failures by 99%.
+- Improved HIL reporting pipelines and test infrastructure for embedded connectivity validation.
+- **Used three languages across this internship:** C++ for OTA firmware, Python for chatbot/automation tooling, and Rust for CLI development.
 
 ### Tesla — Software Engineering Intern
 **Dates:** Jan 2025 – May 2025
 **Location:** Palo Alto, CA
-**Primary Languages/Tech:** Python, C++, CAN bus, SIL/HIL frameworks, pytest, automotive test tooling
+**Primary Languages/Tech:** Python (SIL tests), C/C++ (firmware), HIL/SIL frameworks, automotive test tooling
 
-- Migrated 1000+ SIL (Software-in-the-Loop) tests for next-gen Tesla Model Y firmware in **Python**, uncovering and resolving 10+ critical bugs.
-- Achieved ±2% motor RPM accuracy through CAN bus motor monitoring and **Python**-based closed-loop test automation.
-- Designed and executed thermal safety validation tests in **Python**, including Dog Mode and Child Mode edge-case scenarios, verifying correct cabin temperature control.
-- Contributed to automated regression pipelines in **Python** that reduced manual firmware verification time.
-- **Python was the primary language** used throughout this internship for SIL test migration, CAN bus monitoring, and safety validation automation.
+- Improved HIL (Hardware-in-the-Loop) infrastructure by bringing up an RPM counter for the HIL setup, enabling ground-truth RPM measurement for all motors used in thermal system HIL tests across all vehicle models.
+- Helped develop firmware as part of the HIL infrastructure work, bridging the test tooling layer with the embedded firmware layer.
+- Wrote and brought up all SIL (Software-in-the-Loop) tests for next-gen Model Y in **Python**, migrating and expanding the test suite to cover critical firmware paths.
+- Achieved ±2% motor RPM accuracy through the HIL RPM counter and **Python**-based SIL test automation.
+- Designed thermal safety SIL tests in **Python** covering cabin temperature control across vehicle states (running, parked, powered-off), verifying Dog Mode and Child Mode behavior.
+- **Python was the primary language** for all SIL tests; firmware and HIL infrastructure work involved C/C++.
 
 ### Tektronix — Performance Applications Engineering Intern
 **Dates:** May 2024 – Aug 2024
@@ -70,7 +72,7 @@ detail so that retrieval-augmented answers are accurate and specific.
 ### Programming Languages
 - **Python** — used extensively at Figure, Tesla, and Tektronix for test automation, scripting, AI agents, and backend tooling. Most-used language across all internships.
 - **C / C++** — systems programming, cache simulator, GPU image filter engine, firmware-adjacent tooling at Tesla
-- **Rust** — systems software, memory-safe tooling
+- **Rust** — systems software, memory-safe tooling; built a production CLI at Figure AI
 - **CUDA** — GPU parallel computing, image filter engine (10,000+ threads)
 - **Dart / Flutter** — mobile IoT app at Citadel Technologies
 - **JavaScript / TypeScript / React** — this portfolio website (samiur.dev)
@@ -162,16 +164,69 @@ detail so that retrieval-augmented answers are accurate and specific.
 
 ---
 
+## Strengths
+
+- Deep systems thinking — I naturally reason about performance, memory, latency, and hardware constraints, not just application logic.
+- Strong Python automation skills — test harnesses, scripting, AI tooling, and infrastructure automation across three consecutive internships.
+- Cross-layer experience — I have shipped code at every level: Verilog/FPGA, C/C++ firmware, Python automation, and React/JS web.
+- Fast ramp-up — I joined three companies in three different domains (robotics, automotive, test & measurement) and contributed production code within the first weeks.
+- Clear communicator — I built a Slack-Jira bot at Figure specifically to improve how the firmware team communicated issues.
+
+---
+
+## Areas for Growth / Weaknesses
+
+- **Frontend / web development** — My focus has been systems, embedded, and backend. I'm less experienced in large-scale frontend engineering (complex UI state, design systems, accessibility at scale). I built this portfolio in React but haven't worked on production-scale frontend teams.
+- **Large distributed systems in production** — I've studied distributed systems academically at Georgia Tech and understand the theory, but I haven't yet shipped a high-scale distributed backend in production. It's something I'm actively working to gain more hands-on experience with.
+- **Mobile development depth** — I have one internship (Citadel) in Flutter/Dart mobile development. It's not a primary focus area compared to systems and embedded work.
+- **Product / business domain knowledge** — As an engineering-first student, I think more in terms of system behavior and correctness than user experience or product strategy. I'm aware of this and actively try to understand the end-user impact of technical decisions.
+- **Breadth across all languages** — I'm strongest in Python, C, and C++. Languages I know but have less production depth in: Rust (personal projects), Swift (coursework), SQL (mostly academic).
+
+---
+
 ## Frequently Asked Questions
 
 **Q: What is your most-used programming language?**
 A: Python, by far. I used Python at Figure, Tesla, and Tektronix for test automation, scripting, CAN bus tooling, Slack/Jira bots, MCP servers, and AI agents. It's my primary language for systems automation work.
 
 **Q: Where have you used Python?**
-A: Python was the primary language at three of my four internships — Figure (OTA/HIL test automation, Slack-Jira bot), Tesla (SIL test migration, CAN bus monitoring, thermal safety validation), and Tektronix (MCP servers, AI agent tooling). Citadel used Dart/Flutter instead.
+A: Python was central at three of my four internships. At Tesla I wrote all the SIL tests for next-gen Model Y in Python. At Figure I built the internal chatbots and Slack-Jira automation bot in Python. At Tektronix I used Python for MCP servers and AI agent tooling. Citadel used Dart/Flutter instead.
+
+**Q: What languages did you use at Figure?**
+A: Three languages — C++ for OTA firmware work (fixing bugs, improving the update pipeline), Python for building internal chatbots and the Slack-Jira bot, and Rust for a CLI tool I built for the firmware team.
+
+**Q: What languages did you use at Tesla?**
+A: Python for all SIL (Software-in-the-Loop) tests for next-gen Model Y, and C/C++ for HIL infrastructure and firmware work. I brought up an RPM counter in the HIL setup to enable ground-truth motor measurement across all thermal system tests.
+
+**Q: What firmware work did you do?**
+A: At Tesla I helped develop firmware as part of improving the HIL infrastructure — specifically bringing up an RPM counter that enabled ground-truth RPM measurement for all motors used in thermal system HIL tests. At Figure I contributed to OTA firmware in C++, fixing bugs in the over-the-air update pipeline for Figure's robots.
+
+**Q: What did you build at Figure?**
+A: Three main things — OTA firmware contributions in C++ (fixing OTA bugs and improving update reliability), internal chatbots in Python including a Slack-Jira integration bot that auto-triages firmware issues, and a CLI tool in Rust for internal team workflows. I also scaled HIL connectivity test automation, reducing OTA failures by 99%.
 
 **Q: What is your most fun internship experience?**
 A: Tektronix was uniquely exciting — I built AI agents in Python that could interpret natural-language test goals and automatically control oscilloscopes and other instruments via SCPI/VISA. It felt like the frontier of AI-meets-hardware. Figure was also thrilling because scaling OTA automation to 99% failure reduction on physical robots had real stakes.
 
 **Q: What kind of role are you looking for after graduation?**
 A: Firmware or embedded systems engineering, systems software, or AI/automation engineering. I want roles where software directly interacts with hardware — robotics, automotive, test & measurement, or similar domains.
+
+**Q: Do you have any weaknesses or areas for growth?**
+A: Honestly, my main gaps are frontend/web engineering at scale, production distributed systems (I know the theory well from Georgia Tech but haven't shipped a large-scale distributed backend), and mobile development depth beyond one internship. I'm very systems-focused, which means I sometimes have to consciously zoom out to think about the product experience, not just the technical correctness.
+
+**Q: What are your strengths?**
+A: I'm strongest at the intersection of software and hardware — test automation, firmware validation, embedded scripting, and building AI tooling. I ramp up quickly in new technical domains (three back-to-back internships in robotics, automotive, and test & measurement) and I think in terms of system performance and correctness instinctively.
+
+**Q: How do you handle working in a new codebase or tech stack?**
+A: I lean into reading code and writing small experiments first. At Tesla I migrated 1000+ SIL tests in a large unfamiliar codebase early in my internship. At Tektronix I had to quickly understand SCPI/VISA instrument protocols I'd never used before. Comfort with ambiguity is something I've built across every internship.
+
+**Q: What makes you different from other candidates?**
+A: Most engineers specialize in either software or hardware. I've operated at both layers — writing firmware-adjacent test suites, building AI agents that control physical instruments, and deploying automation that runs on real robots. That cross-layer depth is uncommon for a student.
+
+**Q: What is your GPA and academic standing?**
+A: I have a 3.7 GPA at Georgia Tech and have been on the Dean's List every semester. My concentrations are Distributed Systems & Software Design and Computing Hardware & Emerging Architecture.
+
+**Q: Have you ever failed at something or made a mistake at work?**
+A: Definitely. Early at Tesla I made assumptions about test scope that caused a delay — I learned to over-communicate and verify assumptions explicitly before diving into implementation. At Figure, my first version of the OTA automation had edge cases that slipped through; I went back and added a more systematic scenario mapping to close them. Failure is how I've learned to write more robust test infrastructure.
+
+**Q: What do you do outside of work or school?**
+A: I spend a lot of time on side projects at the intersection of AI and hardware — this portfolio itself is one of them. I also follow robotics and embedded systems research closely, particularly in the open-source RISC-V and autonomous systems communities.

@@ -54,12 +54,12 @@ function retrieveTopChunks(queryVec, chunks, k = 4) {
 const SYSTEM_PROMPT = `You are a portfolio assistant speaking as Samiur Rahman.
 
 Rules you must follow without exception:
-1. Only answer questions about Samiur — education, internships, projects, skills, career goals, and contact info.
-2. If the question is not about Samiur (e.g. weather, math, writing code, other people), reply exactly:
+1. Answer any question about Samiur — education, internships, projects, skills, career goals, strengths, weaknesses, areas for growth, personality, work style, mistakes, hobbies, what makes him unique, and contact info. All introspective and personal questions about Samiur are valid.
+2. If the question is clearly NOT about Samiur at all (e.g. weather, math problems, writing code for the visitor, other unrelated people), reply exactly:
    "I can only answer questions about Samiur Rahman. Try asking about his internships, projects, or skills."
 3. Answer in first person, 2–4 sentences, no bullet points or headers.
-4. Base your answer solely on the resume context provided. Do not fabricate facts.
-5. Questions about future plans, career goals, or desired roles are valid — answer from context.
+4. Base your answer on the resume context provided. If the context is thin, use what you know from it and be honest about limits rather than refusing.
+5. Never fabricate facts not supported by the context.
 
 Resume context (retrieved from resume):
 {context}`;
@@ -67,12 +67,12 @@ Resume context (retrieved from resume):
 // ─── Keyword router — fallback when OpenAI is unavailable ─────────────────────
 const KNOWLEDGE_BASE = [
   {
-    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation"],
-    answer: "At Figure I scaled OTA and HIL connectivity test automation, growing automated OTA coverage and significantly reducing OTA-related failures. I also built a Slack-Jira integration bot to automate issue triaging and status syncing across the firmware team, and improved HIL reporting pipelines for robot connectivity validation.",
+    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation", "cli", "rust cli"],
+    answer: "At Figure I worked across three languages: C++ for OTA firmware (fixing OTA bugs and improving the update pipeline for humanoid robots), Python for internal chatbots and a Slack-Jira bot that auto-triages firmware issues, and Rust for a CLI tool I built for the firmware team. I also scaled HIL connectivity test automation, reducing OTA-related failures by 99%.",
   },
   {
-    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain"],
-    answer: "At Tesla I developed SIL/HIL firmware validation test suites for next-gen Model Y powertrain systems. I achieved ±2% motor RPM accuracy through CAN bus monitoring and closed-loop automation, and designed thermal safety tests covering edge cases like Dog Mode and Child Mode.",
+    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain", "hil infra", "rpm counter"],
+    answer: "At Tesla I improved the HIL infrastructure by bringing up an RPM counter that enabled ground-truth motor measurement across all thermal system HIL tests. I also wrote all the SIL tests for next-gen Model Y in Python, achieving ±2% RPM accuracy, and designed thermal safety tests for Dog Mode and Child Mode in Python.",
   },
   {
     topics: ["tektronix", "scpi", "visa", "instrument", "oscilloscope", "measurement", "json-rpc", "mcp server"],
@@ -127,6 +127,22 @@ const KNOWLEDGE_BASE = [
     answer: "I'm graduating in December 2026 and looking for full-time roles in embedded systems, firmware, systems software, or AI/automation engineering.",
   },
   {
+    topics: ["weakness", "weak", "area for growth", "improve", "not good", "struggle", "challenge", "gap"],
+    answer: "My main areas for growth are frontend engineering at scale, large production distributed systems (I know the theory well but haven't shipped one in production), and mobile depth beyond one internship. I'm very systems-focused, so I sometimes have to consciously zoom out to think about the user experience rather than just technical correctness.",
+  },
+  {
+    topics: ["strength", "good at", "best at", "strongest", "excel", "stand out", "unique", "different"],
+    answer: "I'm strongest at the intersection of software and hardware — test automation, firmware validation, embedded scripting, and AI tooling. I ramp up fast in new domains and I've worked across the full stack from Verilog/FPGA up through Python automation and React web.",
+  },
+  {
+    topics: ["mistake", "fail", "failed", "wrong", "error", "lesson", "learn from"],
+    answer: "Early at Tesla I made scope assumptions that caused a delay — I learned to over-communicate and verify before diving in. At Figure, my first OTA automation had edge cases I missed; I went back and added systematic scenario mapping. Failure is how I've built more robust test infrastructure.",
+  },
+  {
+    topics: ["outside work", "hobby", "hobbies", "personal", "free time", "outside of school"],
+    answer: "Outside of work and school I spend time on side projects at the intersection of AI and hardware — this portfolio is one of them. I also follow robotics and embedded systems research, particularly open-source RISC-V and autonomous systems.",
+  },
+  {
     topics: ["who", "about", "introduce", "summary", "background", "tell me", "samiur", "yourself"],
     answer: "I'm Samiur Rahman, a Computer Engineering student at Georgia Tech (GPA 3.7, Dean's List, Dec 2026) with internships at Figure, Tesla, Tektronix, and Citadel.",
   },
@@ -136,6 +152,10 @@ const ALL_SIGNAL_WORDS = [
   ...new Set(KNOWLEDGE_BASE.flatMap((e) => e.topics)),
   "skill", "project", "intern", "work", "experience", "hire", "background",
   "resume", "portfolio", "degree", "job", "role", "position", "company",
+  "weakness", "strength", "improve", "growth", "challenge", "mistake",
+  "fail", "learn", "hobby", "outside", "unique", "different", "style",
+  "personality", "handle", "approach", "codebase", "stack", "team",
+  "soft", "hard", "technical", "communication", "samiur", "you", "your",
 ];
 
 function isOffTopic(query) {
