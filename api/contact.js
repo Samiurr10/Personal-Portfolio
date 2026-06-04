@@ -1,6 +1,6 @@
 const { Resend } = require("resend");
 
-const TO_EMAIL = "srahman96@gatech.edu";
+const TO_EMAIL = "heyitzsamiur@gmail.com";
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -66,7 +66,7 @@ module.exports = async (req, res) => {
 
     if (error) {
       console.error("Resend error:", error);
-      return res.status(500).json({ status: 500, message: "Failed to send message. Please email me directly at srahman96@gatech.edu." });
+      return res.status(500).json({ status: 500, message: "Failed to send message. Please email me directly at srahman96@gatech.edu.", debug: error.message });
     }
 
     return res.status(200).json({ status: 200, message: "Message sent! I'll get back to you soon." });
