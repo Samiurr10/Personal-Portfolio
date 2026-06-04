@@ -67,12 +67,12 @@ Resume context (retrieved from resume):
 // ─── Keyword router — fallback when OpenAI is unavailable ─────────────────────
 const KNOWLEDGE_BASE = [
   {
-    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation", "cli", "rust cli"],
-    answer: "At Figure I worked across three languages: C++ for OTA firmware (fixing OTA bugs and improving the update pipeline for humanoid robots), Python for internal chatbots and a Slack-Jira bot that auto-triages firmware issues, and Rust for a CLI tool I built for the firmware team. I also scaled HIL connectivity test automation, reducing OTA-related failures by 99%.",
+    topics: ["figure", "ota", "connectivity", "slack", "jira", "robot", "hil automation", "embedded automation", "cli", "rust cli", "nightly bot", "test results", "db latency"],
+    answer: "At Figure (Jan–May 2026) I worked across three languages: C++ for OTA firmware (fixing 25+ OTA bugs, scaling the test suite from 0 to full scenario coverage — reducing OTA failures by 99%), Python for a Slack-Jira bot, nightly HIL summary bot, and an AI agent on the test results website that also cut DB latency by 40%, and Rust for a CLI tool. Connectivity coverage also increased by 40%.",
   },
   {
-    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain", "hil infra", "rpm counter"],
-    answer: "At Tesla I improved the HIL infrastructure by bringing up an RPM counter that enabled ground-truth motor measurement across all thermal system HIL tests. I also wrote all the SIL tests for next-gen Model Y in Python, achieving ±2% RPM accuracy, and designed thermal safety tests for Dog Mode and Child Mode in Python.",
+    topics: ["tesla", "sil", "model y", "can bus", "rpm", "dog mode", "child mode", "thermal", "powertrain", "hil infra", "can motor monitor", "hall sensor"],
+    answer: "At Tesla (Aug–Dec 2025) I migrated 1000+ SIL tests for next-gen Model Y in Python, resolving 10+ critical bugs and covering hall-sensor validation, RPM accuracy, and thermal safety scenarios like Dog Mode and Child Mode. I also brought up CAN Motor Monitor signal integration in C++ for HIL, expanding HIL test coverage to 500+ automated tests.",
   },
   {
     topics: ["tektronix", "scpi", "visa", "instrument", "oscilloscope", "measurement", "json-rpc", "mcp server"],

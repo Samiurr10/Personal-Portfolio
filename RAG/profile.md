@@ -21,31 +21,31 @@ detail so that retrieval-augmented answers are accurate and specific.
 ## Internship Experience
 
 ### Figure AI — Embedded Automation Intern
-**Dates:** Jan 2026 – May 2026 (listed as May 2025–Aug 2025 on earlier resume version)
+**Dates:** Jan 2026 – May 2026
 **Location:** San Jose, CA
-**Primary Languages/Tech:** C++ (OTA firmware), Python (chatbots, automation), Rust (CLI tooling)
+**Primary Languages/Tech:** C++ (OTA firmware), Python (chatbots, AI agent, automation), Rust (CLI tooling)
 
-- Contributed to OTA (Over-the-Air update) firmware in **C++**, helping fix OTA bugs and improve the reliability of the firmware update pipeline for Figure's humanoid robots.
-- Built internal chatbots in **Python** — including a Slack-Jira integration bot that auto-creates Jira tickets from Slack threads, attaches logs, and triggers an agent to open a fix PR.
-- Created a CLI tool in **Rust** to support internal workflows and tooling for the firmware team.
-- Scaled OTA and HIL connectivity test automation, reducing OTA-related failures by 99%.
-- Improved HIL reporting pipelines and test infrastructure for embedded connectivity validation.
-- **Used three languages across this internship:** C++ for OTA firmware, Python for chatbot/automation tooling, and Rust for CLI development.
+- Scaled connectivity test infrastructure from basic speed tests to full interface validation (priority arbitration, service allowlisting, Wi-Fi stability, AP testing, mid-OTA network switching), increasing automated coverage by 40%.
+- Debugged and fixed 25+ OTA bugs in **C++**, authored regression tests for each, and grew the OTA automated test suite from 0 to full scenario coverage, reducing OTA-related failures by 99%.
+- Built a Slack-Jira integration bot in **Python** that auto-creates Jira tickets from Slack threads, attaches logs, and triggers an agent to open a fix PR.
+- Deployed a nightly HIL summary bot in **Python** that surfaces root causes, links relevant merged PRs, and tags owners.
+- Improved the test results website by adding an interactive AI agent and optimized DB read/write latency by 40% using **Python**.
+- Created a CLI tool in **Rust** to support internal firmware team workflows.
+- **Three languages used:** C++ for OTA firmware, Python for chatbot/AI agent/automation tooling, and Rust for CLI development.
 
 ### Tesla — Software Engineering Intern
-**Dates:** Jan 2025 – May 2025
+**Dates:** Aug 2025 – Dec 2025
 **Location:** Palo Alto, CA
-**Primary Languages/Tech:** Python (SIL tests), C/C++ (firmware), HIL/SIL frameworks, automotive test tooling
+**Primary Languages/Tech:** Python (SIL tests), C/C++ (HIL firmware infrastructure), CAN bus, hall-sensor validation
 
-- Improved HIL (Hardware-in-the-Loop) infrastructure by bringing up an RPM counter for the HIL setup, enabling ground-truth RPM measurement for all motors used in thermal system HIL tests across all vehicle models.
-- Helped develop firmware as part of the HIL infrastructure work, bridging the test tooling layer with the embedded firmware layer.
-- Wrote and brought up all SIL (Software-in-the-Loop) tests for next-gen Model Y in **Python**, migrating and expanding the test suite to cover critical firmware paths.
-- Achieved ±2% motor RPM accuracy through the HIL RPM counter and **Python**-based SIL test automation.
-- Designed thermal safety SIL tests in **Python** covering cabin temperature control across vehicle states (running, parked, powered-off), verifying Dog Mode and Child Mode behavior.
-- **Python was the primary language** for all SIL tests; firmware and HIL infrastructure work involved C/C++.
+- Migrated 1000+ SIL (Software-in-the-Loop) tests for next-gen Tesla Model Y firmware in **Python**, uncovering and resolving 10+ critical bugs.
+- Ensured ±2% motor RPM accuracy and safety cut-off behavior by validating hall-sensor feedback through **Python**-based SIL tests.
+- Expanded firmware validation coverage across 500+ automated HIL tests by bringing up CAN Motor Monitor signal integration in **C++** for real-time motor performance monitoring.
+- Strengthened thermal safety validation by authoring SIL tests in **Python** for cabin temperature control across vehicle states (running, parked, powered-off), verifying correct Dog Mode and Child Mode behavior.
+- **Python was the primary language** for all SIL tests; CAN Motor Monitor HIL infrastructure work involved C/C++.
 
 ### Tektronix — Performance Applications Engineering Intern
-**Dates:** May 2024 – Aug 2024
+**Dates:** May 2025 – Aug 2025
 **Location:** Beaverton, OR
 **Primary Languages/Tech:** Python, JSON-RPC 2.0, SCPI/VISA, MCP (Model Context Protocol), LangChain, OpenAI API
 
@@ -55,7 +55,7 @@ detail so that retrieval-augmented answers are accurate and specific.
 - **Python was the primary language** used throughout this internship for MCP servers, AI agents, and instrument control scripts.
 
 ### Citadel Technologies — Software Development Intern
-**Dates:** Aug 2023 – Dec 2023
+**Dates:** May 2024 – Aug 2024
 **Location:** Atlanta, GA
 **Primary Languages/Tech:** Flutter, Dart, WebSockets, Firebase, REST APIs, Provider, IoT (not Python)
 
@@ -196,16 +196,16 @@ A: Python, by far. I used Python at Figure, Tesla, and Tektronix for test automa
 A: Python was central at three of my four internships. At Tesla I wrote all the SIL tests for next-gen Model Y in Python. At Figure I built the internal chatbots and Slack-Jira automation bot in Python. At Tektronix I used Python for MCP servers and AI agent tooling. Citadel used Dart/Flutter instead.
 
 **Q: What languages did you use at Figure?**
-A: Three languages — C++ for OTA firmware work (fixing bugs, improving the update pipeline), Python for building internal chatbots and the Slack-Jira bot, and Rust for a CLI tool I built for the firmware team.
+A: Three languages — C++ for OTA firmware work (debugging 25+ OTA bugs and improving the update pipeline), Python for building the Slack-Jira bot, nightly HIL summary bot, and an AI agent for the test results website, and Rust for a CLI tool I built for the firmware team.
 
 **Q: What languages did you use at Tesla?**
-A: Python for all SIL (Software-in-the-Loop) tests for next-gen Model Y, and C/C++ for HIL infrastructure and firmware work. I brought up an RPM counter in the HIL setup to enable ground-truth motor measurement across all thermal system tests.
+A: Python for all 1000+ SIL tests for next-gen Model Y (including hall-sensor validation and thermal safety tests), and C/C++ for HIL infrastructure — specifically bringing up CAN Motor Monitor signal integration that expanded HIL validation coverage to 500+ automated tests.
 
 **Q: What firmware work did you do?**
-A: At Tesla I helped develop firmware as part of improving the HIL infrastructure — specifically bringing up an RPM counter that enabled ground-truth RPM measurement for all motors used in thermal system HIL tests. At Figure I contributed to OTA firmware in C++, fixing bugs in the over-the-air update pipeline for Figure's robots.
+A: At Tesla I brought up CAN Motor Monitor signal integration in C++ as part of the HIL infrastructure, enabling real-time motor performance monitoring and expanding HIL test coverage to 500+ tests. At Figure I contributed to OTA firmware in C++, debugging and fixing 25+ OTA bugs and authoring regression tests to prevent recurrence.
 
 **Q: What did you build at Figure?**
-A: Three main things — OTA firmware contributions in C++ (fixing OTA bugs and improving update reliability), internal chatbots in Python including a Slack-Jira integration bot that auto-triages firmware issues, and a CLI tool in Rust for internal team workflows. I also scaled HIL connectivity test automation, reducing OTA failures by 99%.
+A: Several things — OTA firmware work in C++ (fixing 25+ bugs, writing regression tests, scaling the test suite from 0 to full scenario coverage), a Slack-Jira bot and nightly HIL summary bot in Python, an AI agent for the test results website in Python that also cut DB read/write latency by 40%, and a CLI tool in Rust. The combined impact: OTA-related failures reduced by 99% and automated connectivity coverage increased by 40%.
 
 **Q: What is your most fun internship experience?**
 A: Tektronix was uniquely exciting — I built AI agents in Python that could interpret natural-language test goals and automatically control oscilloscopes and other instruments via SCPI/VISA. It felt like the frontier of AI-meets-hardware. Figure was also thrilling because scaling OTA automation to 99% failure reduction on physical robots had real stakes.

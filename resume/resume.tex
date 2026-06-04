@@ -1,0 +1,215 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{0pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Samiur Rahman} \\ \vspace{1pt}
+    \small
+    \href{mailto:srahman96@gatech.edu}{\underline{srahman96@gatech.edu}} ~
+    \href{https://www.linkedin.com/in/samiur-rahman-1a09b6271/}{\underline{linkedin/Samiur-Rahman}} ~
+    \href{https://github.com/Samiurr10}{\underline{github.com/Samiurr10}} ~
+    \href{https://www.samiur.dev}{\underline{samiur.dev}} ~
+\end{center}
+
+\vspace{-1.5em}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology}{Jan 2023 -- Dec 2026}
+      {\large Bachelors of Science in Computer Engineering}{Atlanta, GA}
+      \vspace{0.1}
+  \resumeSubHeadingListEnd
+
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+    \textbf{GPA:}{ 3.7/4.0, Dean's List} \\
+    \textbf{Concentration:}{ Distributed System \& Software Design and Computing Hardware \& Emerging Architecture} \\
+    \textbf{Relevant Coursework:}{ Object Oriented Programming; Data Structures; Algorithms; Embedded Systems; Adv Computer Architecture; GPU Programming; Computer Networking; Operating Systems}
+  }}
+\end{itemize}
+
+\vspace{-1.7em}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Figure}{Jan 2026 -- May 2026}
+      {Embedded Automation Intern}{San Jose, CA}
+      \resumeItemListStart
+        \resumeItem{Scaled connectivity test infrastructure from basic speed tests to full interface validation (priority arbitration, service allowlisting, Wi-Fi stability, AP testing, mid-OTA network switching), increasing automated coverage by 40\%}
+        \resumeItem{Debugged and fixed 25+ OTA bugs, authored regression tests for each, and grew the OTA automated test suite from 0 to full scenario coverage, reducing OTA-related failures by 99\%}
+        \resumeItem{Built a Slack Jira bot that auto-creates tickets from threads, attaches logs, and triggers an agent to open a fix PR}
+        \resumeItem{Deployed a nightly HIL summary bot that surfaces root causes, links relevant merged PRs, and tags owners}
+        \resumeItem{Improved test results website by adding an interactive AI agent and optimized DB read/write latency by 40\%}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tesla}{Aug 2025 -- Dec 2025}
+      {Software Engineering Intern}{Palo Alto, CA}
+      \resumeItemListStart
+        \resumeItem{Migrated 1000+ SIL tests for next-gen Tesla Model Y firmware, uncovering and resolving 10+ critical bugs}
+        \resumeItem{Ensured ±2\% motor RPM accuracy and safety cut-off behavior by validating hall-sensor feedback}
+        \resumeItem{Expanded firmware validation coverage across 500+ automated HIL tests by bringing up CAN Motor Monitor signal integration for real-time motor performance monitoring}
+        \resumeItem{Strengthened thermal safety validation by authoring SIL tests for cabin temperature control across vehicle states (running, parked, powered-off), verifying correct Dog Mode and Child Mode behavior}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tektronix}{May 2025 -- Aug 2025}
+      {Performance Applications Engineering Intern}{Beaverton, OR}
+      \resumeItemListStart
+        \resumeItem{Developed an AI-driven agent to translate natural language measurement goals into automated test workflows, integrating SCPI/VISA commands for Tektronix devices, reducing manual setup time by 60\%}
+        \resumeItem{Built standalone MCP servers with JSON-RPC 2.0 compliance, UDP discovery, and SCPI/VISA integration, enabling seamless multi-instrument control and improving test throughput by 35\%}
+        \resumeItem{Delivered demos and training on developed AI tools for application engineers, increasing productivity by 50\%}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Citadel Technologies}{May 2024 -- Aug 2024}
+      {Software Development Intern}{Atlanta, GA}
+      \resumeItemListStart
+        \resumeItem{Developed a Flutter mobile app for remote garage control using WebSocket APIs, achieving 95\% user satisfaction}
+        \resumeItem{Implemented multi-garage and home view support using Provider and RESTful APIs, reducing setup time by 40\%}
+        \resumeItem{Integrated IoT sensors and Firebase Cloud Messaging for real-time alerts, increasing response times by 30\%}
+        \resumeItem{Optimized app performance and network payload, reducing load times by 35\% and boosting user retention by 20\%}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+        {\textbf{Cache Simulator} $|$ Multi-level CPU cache simulator with configurable L1, Victim, and L2 cache}{}
+      \resumeProjectHeading
+        {\textbf{GPU Image Filter Engine} $|$ Parallelized image filtering pipeline applying convolution kernels across 10,000+ threads}{}
+      \resumeProjectHeading
+        {\textbf{Memory Allocator} $|$ Custom malloc implementation using slab and buddy allocator strategies}{}
+      \resumeProjectHeading
+        {\textbf{Binary Arcade Game} $|$ Retro arcade game using I2C, UART, SPI protocols and a custom FlashIAP library}{}
+    \resumeSubHeadingListEnd
+
+\vspace{-1.3em}
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{Languages:}{ C, C++, Objective-C, Swift, Python, Rust, CUDA, JavaScript, Assembly, SQL} \\
+    \textbf{Software Tools:}{ Git, GDB, LLDB, Docker, Linux/Unix, OpenMP, OpenGL, CMake, Bootloader, RTOS} \\
+    \textbf{Dev Platforms:}{ Claude-Code, Codex, Xcode, Qwen3.5, Model Context Protocol (MCP), AWS (EC2, S3), Azure} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
