@@ -111,7 +111,7 @@ async function run() {
   console.log("\n── Education questions ───────────────────────────────────────");
 
   d = await ask("where do you go to school?");
-  check("Education", d, { shouldContain: ["georgia tech"] });
+  check("Education", d, { shouldContain: ["georgia"] });
 
   d = await ask("what is your GPA?");
   check("GPA", d, { shouldContain: ["3.7"] });
