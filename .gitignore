@@ -20,10 +20,16 @@
 .env.production.local
 backend/.env
 backend/venv/
+RAG/venv/
 backend/__pycache__/
 *.pyc
+RAG/chroma_db/
+RAG/__pycache__/
+RAG/tests/__pycache__/
+RAG/.env
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .vercel
+.env*
