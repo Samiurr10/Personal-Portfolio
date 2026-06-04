@@ -188,6 +188,17 @@ module.exports = async (req, res) => {
 
   const { query } = req.body || {};
   const trimmed = String(query || "").trim();
+
+  // Safe debug: returns key presence only, never the value
+  if (trimmed === "__debug") {
+    return res.status(200).json({
+      status: 200,
+      hasKey: !!process.env.OPENAI_API_KEY,
+      keyLength: process.env.OPENAI_API_KEY?.length || 0,
+      model: "gpt-4o-mini",
+    });
+  }
+
   if (!trimmed) {
     return res.status(400).json({ status: 400, response: "Please enter a question." });
   }
