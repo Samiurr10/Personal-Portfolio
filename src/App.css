@@ -817,6 +817,105 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #fff;
 }
 
+/************ Contact Css ************/
+.contact {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 48px 40px;
+  backdrop-filter: blur(4px);
+}
+
+.contact h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.contact p {
+  color: #B8B8B8;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 16px;
+  resize: none;
+  transition: background 0.2s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.contact-form button {
+  margin-top: 6px;
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  background-color: #fff;
+  color: #121212;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  align-self: center;
+}
+
+.contact-form button:hover:not(:disabled) {
+  background-color: #121212;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-status {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.contact-status--success {
+  color: #4ade80;
+}
+
+.contact-status--error {
+  color: #f87171;
+}
+
 /************ Mobile Responsive ************/
 @media (max-width: 768px) {
 
@@ -943,6 +1042,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   .chat form {
     max-width: 92%;
     padding: 0 16px;
+  }
+
+  /* Contact */
+  .contact h2 {
+    font-size: 32px;
+  }
+  .contact p {
+    font-size: 16px;
+  }
+  .contact-card {
+    padding: 32px 20px;
   }
 
   /* Footer */
