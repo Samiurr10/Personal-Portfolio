@@ -682,9 +682,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .chat {
   padding: 80px 0;
   position: relative;
-  overflow: hidden;
   color: #fff;
   text-align: center;
+}
+
+.chat .background-image-left {
+  top: 0;
 }
 
 .chat h2 {
@@ -751,10 +754,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact {
   padding: 80px 0;
   position: relative;
-  overflow: hidden;
   background: none;
   color: #fff;
   text-align: center;
+}
+
+.contact .background-image-left,
+.contact .background-image-right {
+  top: 0;
 }
 
 .contact-card {
