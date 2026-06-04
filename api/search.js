@@ -230,11 +230,19 @@ module.exports = async (req, res) => {
       if (openaiRes.ok) {
         const text = data.choices?.[0]?.message?.content?.trim();
         if (text) {
-          return res.status(200).json({ status: 200, response: text });
+          return res.status(200).json({ status: 200, response: text, source: "llm" });
         }
+      } else {
+        console.error("OpenAI error:", openaiRes.status, JSON.stringify(data));
+        return res.status(200).json({
+          status: 200,
+          response: keywordFallback(trimmed.toLowerCase()),
+          source: "fallback",
+          llmError: data.error?.message || `HTTP ${openaiRes.status}`,
+        });
       }
-    } catch {
-      // fall through to keyword router
+    } catch (err) {
+      console.error("OpenAI fetch error:", err.message);
     }
   }
 
