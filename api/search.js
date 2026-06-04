@@ -128,7 +128,7 @@ const KNOWLEDGE_BASE = [
   },
   {
     topics: ["weakness", "weak", "area for growth", "improve", "not good", "struggle", "challenge", "gap"],
-    answer: "My main areas for growth are frontend engineering at scale, large production distributed systems (I know the theory well but haven't shipped one in production), and mobile depth beyond one internship. I'm very systems-focused, so I sometimes have to consciously zoom out to think about the user experience rather than just technical correctness.",
+    answer: "I believe I'm a fast learner — if I focus on anything long enough, I no longer have it as a weakness. That's not just something I say; every internship put me in a completely new domain and I was shipping production work within weeks each time. There are things I haven't done at scale yet, like large frontend teams or production distributed backends, but those are temporary gaps, not permanent weaknesses.",
   },
   {
     topics: ["strength", "good at", "best at", "strongest", "excel", "stand out", "unique", "different"],

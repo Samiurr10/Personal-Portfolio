@@ -176,11 +176,14 @@ detail so that retrieval-augmented answers are accurate and specific.
 
 ## Areas for Growth / Weaknesses
 
-- **Frontend / web development** — My focus has been systems, embedded, and backend. I'm less experienced in large-scale frontend engineering (complex UI state, design systems, accessibility at scale). I built this portfolio in React but haven't worked on production-scale frontend teams.
-- **Large distributed systems in production** — I've studied distributed systems academically at Georgia Tech and understand the theory, but I haven't yet shipped a high-scale distributed backend in production. It's something I'm actively working to gain more hands-on experience with.
-- **Mobile development depth** — I have one internship (Citadel) in Flutter/Dart mobile development. It's not a primary focus area compared to systems and embedded work.
-- **Product / business domain knowledge** — As an engineering-first student, I think more in terms of system behavior and correctness than user experience or product strategy. I'm aware of this and actively try to understand the end-user impact of technical decisions.
-- **Breadth across all languages** — I'm strongest in Python, C, and C++. Languages I know but have less production depth in: Rust (personal projects), Swift (coursework), SQL (mostly academic).
+I believe I am a fast learner. If I focus on anything long enough, I no longer have it as a weakness — that's genuinely how I approach gaps in my knowledge. Every internship put me in a new domain (mobile IoT, test & measurement, automotive firmware, robotics) and I contributed production-level work in each one within weeks.
+
+Current areas I'm actively growing in:
+- **Frontend / web engineering at scale** — I've built this portfolio in React but haven't worked on a large production frontend team. I'm learning but it's not my primary focus.
+- **Large distributed systems in production** — I understand the theory deeply from Georgia Tech coursework, and it's a concentration of mine. Hands-on production experience at scale is something I'll close quickly once in the right role.
+- **Mobile development depth** — One internship (Citadel, Flutter/Dart). Not a primary area, but I can pick it up fast when needed.
+
+The honest answer is: weaknesses are temporary for me. I identify the gap, focus on it, and close it.
 
 ---
 
@@ -211,7 +214,7 @@ A: Tektronix was uniquely exciting — I built AI agents in Python that could in
 A: Firmware or embedded systems engineering, systems software, or AI/automation engineering. I want roles where software directly interacts with hardware — robotics, automotive, test & measurement, or similar domains.
 
 **Q: Do you have any weaknesses or areas for growth?**
-A: Honestly, my main gaps are frontend/web engineering at scale, production distributed systems (I know the theory well from Georgia Tech but haven't shipped a large-scale distributed backend), and mobile development depth beyond one internship. I'm very systems-focused, which means I sometimes have to consciously zoom out to think about the product experience, not just the technical correctness.
+A: I believe I'm a fast learner — if I focus on anything long enough, I no longer have it as a weakness. That's not just something I say; every internship dropped me into a brand new domain and I was shipping production work within weeks each time. There are things I haven't done at scale yet (large frontend teams, production distributed backends), but those are temporary gaps, not permanent weaknesses.
 
 **Q: What are your strengths?**
 A: I'm strongest at the intersection of software and hardware — test automation, firmware validation, embedded scripting, and building AI tooling. I ramp up quickly in new technical domains (three back-to-back internships in robotics, automotive, and test & measurement) and I think in terms of system performance and correctness instinctively.
