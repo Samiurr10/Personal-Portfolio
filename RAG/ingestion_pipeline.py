@@ -21,19 +21,20 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter, MarkdownHeaderTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_chroma import Chroma
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
 EMBEDDING_MODEL = "text-embedding-3-small"
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 50
+CHUNK_SIZE = 400   # smaller = finer-grained retrieval
+CHUNK_OVERLAP = 80  # generous overlap so context never splits mid-sentence
 
 _ROOT = Path(__file__).parent.parent
 DEFAULT_PDF_PATH = _ROOT / "public" / "Samiur_Rahman_Resume.pdf"
+DEFAULT_PROFILE_PATH = Path(__file__).parent / "profile.md"
 DEFAULT_CHROMA_DIR = Path(__file__).parent / "chroma_db"
 DEFAULT_EXPORT_PATH = _ROOT / "api" / "vectorstore.json"
 
@@ -42,14 +43,16 @@ DEFAULT_EXPORT_PATH = _ROOT / "api" / "vectorstore.json"
 
 class IngestionPipeline:
     """
-    End-to-end ingestion: PDF → chunks → ChromaDB + optional JSON export.
+    End-to-end ingestion: PDF + profile.md → chunks → ChromaDB + optional JSON export.
 
     Parameters
     ----------
     openai_api_key : str | None
         If None, falls back to the OPENAI_API_KEY environment variable.
     pdf_path : Path | str
-        Path to the PDF to ingest.
+        Path to the resume PDF.
+    profile_path : Path | str
+        Path to the rich profile markdown (RAG/profile.md).
     chroma_dir : Path | str
         Directory where ChromaDB will persist its data.
     """
@@ -58,6 +61,7 @@ class IngestionPipeline:
         self,
         openai_api_key: str | None = None,
         pdf_path: Path | str = DEFAULT_PDF_PATH,
+        profile_path: Path | str = DEFAULT_PROFILE_PATH,
         chroma_dir: Path | str = DEFAULT_CHROMA_DIR,
     ):
         load_dotenv(Path(__file__).parent / ".env")
@@ -68,6 +72,7 @@ class IngestionPipeline:
             )
 
         self.pdf_path = Path(pdf_path)
+        self.profile_path = Path(profile_path)
         self.chroma_dir = Path(chroma_dir)
         self.embeddings = OpenAIEmbeddings(model=EMBEDDING_MODEL, api_key=api_key)
 
@@ -75,26 +80,58 @@ class IngestionPipeline:
 
     def load_and_split(self) -> list:
         """
-        Load the PDF and split it into overlapping text chunks.
+        Load the resume PDF and profile.md, then split into overlapping chunks.
+
+        The profile.md is split by Markdown headers first so each section
+        (e.g. "Tesla — Software Engineering Intern") stays semantically intact
+        before further character-level splitting. The PDF provides the raw
+        resume text as a grounding source.
 
         Returns
         -------
         list[Document]
-            LangChain Documents with page_content and metadata (source, page).
+            LangChain Documents with page_content and metadata.
         """
+        all_docs = []
+
+        # ── 1. Resume PDF ─────────────────────────────────────────────────────
         if not self.pdf_path.exists():
             raise FileNotFoundError(f"PDF not found: {self.pdf_path}")
 
-        loader = PyPDFLoader(str(self.pdf_path))
-        pages = loader.load()
+        pdf_loader = PyPDFLoader(str(self.pdf_path))
+        pdf_pages = pdf_loader.load()
+        for doc in pdf_pages:
+            doc.metadata["source"] = "resume_pdf"
 
-        splitter = RecursiveCharacterTextSplitter(
+        char_splitter = RecursiveCharacterTextSplitter(
             chunk_size=CHUNK_SIZE,
             chunk_overlap=CHUNK_OVERLAP,
-            separators=["\n\n", "\n", " ", ""],
+            separators=["\n\n", "\n", "•", " ", ""],
         )
-        chunks = splitter.split_documents(pages)
-        return chunks
+        pdf_chunks = char_splitter.split_documents(pdf_pages)
+        all_docs.extend(pdf_chunks)
+
+        # ── 2. Rich profile markdown ──────────────────────────────────────────
+        if self.profile_path.exists():
+            headers_to_split = [
+                ("#", "section"),
+                ("##", "subsection"),
+                ("###", "role"),
+            ]
+            md_splitter = MarkdownHeaderTextSplitter(
+                headers_to_split_on=headers_to_split,
+                strip_headers=False,
+            )
+            md_text = self.profile_path.read_text(encoding="utf-8")
+            md_sections = md_splitter.split_text(md_text)
+            for doc in md_sections:
+                doc.metadata["source"] = "profile_md"
+
+            # Further split long sections with the character splitter
+            md_chunks = char_splitter.split_documents(md_sections)
+            all_docs.extend(md_chunks)
+
+        return all_docs
 
     def build_vectorstore(self, chunks: list) -> Chroma:
         """
@@ -167,12 +204,23 @@ class IngestionPipeline:
         """
         Execute the full ingestion pipeline.
 
+        Wipes the existing ChromaDB collection before rebuilding so stale
+        vectors from a previous run don't pollute results.
+
         Returns
         -------
         Chroma
             The populated vectorstore.
         """
-        print(f"\n[1/3] Loading & splitting {self.pdf_path.name}…")
+        import shutil
+        if self.chroma_dir.exists():
+            shutil.rmtree(self.chroma_dir)
+            print(f"      ↺ Cleared old ChromaDB at {self.chroma_dir}")
+
+        sources = [self.pdf_path.name]
+        if self.profile_path.exists():
+            sources.append(self.profile_path.name)
+        print(f"\n[1/3] Loading & splitting {' + '.join(sources)}…")
         chunks = self.load_and_split()
         print(f"      → {len(chunks)} chunks (size≤{CHUNK_SIZE}, overlap={CHUNK_OVERLAP})")
 

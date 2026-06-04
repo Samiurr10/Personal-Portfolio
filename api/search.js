@@ -197,9 +197,9 @@ module.exports = async (req, res) => {
       // Step 1: embed the query
       const queryVec = await embedQuery(trimmed, apiKey);
 
-      // Step 2: retrieve top-4 most relevant resume chunks
+      // Step 2: retrieve top-5 most relevant resume chunks
       const topChunks = chunks.length > 0
-        ? retrieveTopChunks(queryVec, chunks, 4)
+        ? retrieveTopChunks(queryVec, chunks, 5)
         : ["(no resume context available — please run ingestion_pipeline.py)"];
 
       const context = topChunks.join("\n\n---\n\n");
