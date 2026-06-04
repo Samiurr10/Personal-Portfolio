@@ -143,7 +143,7 @@ const KNOWLEDGE_BASE = [
 const ALL_SIGNAL_WORDS = [
   ...new Set(KNOWLEDGE_BASE.flatMap((e) => e.topics)),
   "skill", "project", "intern", "work", "experience", "hire", "background",
-  "what", "how", "when", "where", "why", "did you", "have you", "can you",
+  "resume", "portfolio", "degree", "job", "role", "position", "company",
 ];
 
 function scoreEntry(query, entry) {
